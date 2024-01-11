@@ -1,0 +1,7 @@
+set verbose off
+set complaints 0
+set trace-commands off
+add-symbol-file history_access.o 0
+set $myoffs = ((HISTORY_STATE*)history_get_history_state())->offset
+set $line = ((HISTORY_STATE *)history_get_history_state())->entries[$myoffs-2]->line
+printf "%s\n", $line

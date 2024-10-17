@@ -6,22 +6,23 @@ make -s
 source config
 
 print_help() {
-    echo "tie-command : save your last command into an output file"
-    echo "tiec options:"
-    echo -e "\t-c | --cat\t: print the output file results and exit"
-    echo -e "\t-d \t\t: don't write to file. useful for setup commands"
-    echo -e "\t-f | --file\t: specify the output path and filename"
-    echo -e " \t      'tiec [-f | --file]=\$(pwd)/filename.sh'\n"
-    echo -e "\t-h | --help\t: what you did just now"
-    echo -e "\t-i | --process-id\t: take last command from a different shell, if you have the pid"
-    echo -e " \t      'tiec [-i | --process-id]=1234'\n"
-    echo -e "\t-p | --preface\t: preface your command with an explanation"
-    echo -e " \t      'tiec [-p | --preface]=\"special command that does x\"'\n"
-    echo -e "\t-s | --shell\t: change the boilerplate ( default #!/bin/bash )"
-    echo -e "\twon't do anything if the file is already started"
-    echo -e " \t      'tiec [-s | --shell]=#!/bin/zsh'\n"
-    echo -e "\t-v | --version\t: print version information and exit"
-    echo ""
+    format="    %-20s %s\n"
+    printf "tie-command - save your last command into an output file\n\n"  
+    printf "${format}"  "tiec options:"                                     \ 
+    "-c, --cat"       "print the output file results and exit"              \
+    "-d"             "don't write to file. useful for setup commands"       \
+    "-f, --file"       "specify the output path and filename"               \
+    "" "'tiec [-f | --file]=\$(pwd)/filename.sh'"                           \
+    "-h, --help"       "what you did just now"                              \
+    "-i, --process-id" "take last command from a different shell using pid" \
+    "" "'tiec [-i | --process-id]=1234'"                                    \
+    "-p, --preface"    "preface your command with an explanation"           \
+    "" "'tiec [-p | --preface]=\"special command that does x\"'"            \
+    "-s, --shell"      "change the boilerplate ( default #!/bin/bash )"     \
+    "" "won't do anything if the file is already started"                   \
+    "" "'tiec [-s | --shell]=#!/bin/zsh'"                                   \
+    "-v, --version"    "print version information and exit" "" 
+    
     exit 0
 }
 extract_argument() {

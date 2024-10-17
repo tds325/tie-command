@@ -1,0 +1,41 @@
+# state variables
+DEFAULT='setup.sh'
+STORAGE='/tmp/tie-command-storagefile'
+SHELL="/bin/bash"
+PREFACE=""
+COMMENT='#'
+VERSION="v0.1"
+FILE_PROVIDED=false
+DONT_WRITE=false
+FILENAME=$(pwd)/$DEFAULT
+PROCESS_ID=$PPID
+
+# set default editor
+if [ -z "$EDITOR" ]; then
+    EDITOR=vim
+fi
+
+set -o vi
+bind '"\C-0":"echo hello"'
+
+# keybinds for readline
+# 1:  
+
+# 2: 
+
+# 3: 
+
+# 4: 
+
+# 5: 
+
+# 6: 
+
+# 7: 
+
+# 8: 
+
+# 9: 
+
+# 0: 
+

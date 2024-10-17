@@ -1,18 +1,9 @@
 #!/bin/bash 
 
-DEFAULT='setup.sh'
-STORAGE='/tmp/tie-command-storagefile'
-SHELL="/bin/bash"
-FILENAME=$(pwd)/$DEFAULT
-PROCESS_ID=$PPID
-PREFACE=""
-COMMENT='#'
-VERSION="v0.1"
-FILE_PROVIDED=false
-DONT_WRITE=false
 dir="$(cd -P -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 cd "$dir"
 make -s
+source config
 
 print_help() {
     echo "tie-command : save your last command into an output file"
